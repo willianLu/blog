@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://willianlu.github.io/blog">
-  <title>pjax: 当ajax遇上pushState | 一花一世界</title>
+  <title>一花一世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="var pjax &#x3D; pushState + ajax;小时候，小浣熊方便面里面有各种水浒人物的卡片。我买了一包，吃了方便面，饱了。而我又买了第二包，不是想吃方便面，而是仅仅想得到里面的卡片…">
-<meta property="og:type" content="article">
-<meta property="og:title" content="pjax: 当ajax遇上pushState">
-<meta property="og:url" content="https://willianlu.github.io/blog/2014/02/12/test/index.html">
+  <meta name="description" content="Gitment Gitment is a comment system based on GitHub Issues,which can be used in the frontend without any server-side implementation. Demo Page 中文简介  Features Get Started Methods Customize About Securi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="一花一世界">
+<meta property="og:url" content="https://willianlu.github.io/blog/gitment/README.html">
 <meta property="og:site_name" content="一花一世界">
-<meta property="og:description" content="var pjax &#x3D; pushState + ajax;小时候，小浣熊方便面里面有各种水浒人物的卡片。我买了一包，吃了方便面，饱了。而我又买了第二包，不是想吃方便面，而是仅仅想得到里面的卡片…">
+<meta property="og:description" content="Gitment Gitment is a comment system based on GitHub Issues,which can be used in the frontend without any server-side implementation. Demo Page 中文简介  Features Get Started Methods Customize About Securi">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2014-02-12T00:55:00.000Z">
-<meta property="article:modified_time" content="2021-02-25T02:48:24.984Z">
+<meta property="og:image" content="https://img.shields.io/npm/v/gitment.svg">
+<meta property="article:published_time" content="2021-02-25T07:27:47.451Z">
+<meta property="article:modified_time" content="2017-04-04T21:04:00.000Z">
 <meta property="article:author" content="lukunkun">
-<meta property="article:tag" content="js">
-<meta property="article:tag" content="html5">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.shields.io/npm/v/gitment.svg">
   
     <link rel="alternative" href="/atom.xml" title="一花一世界" type="application/atom+xml">
   
@@ -148,76 +148,113 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      pjax: 当ajax遇上pushState
-    </h1>
-  
-
-        
-        <a href="/blog/2014/02/12/test/" class="archive-article-date">
-  	<time datetime="2014-02-12T00:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-02-12</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>var pjax = pushState + ajax;<br>小时候，小浣熊方便面里面有各种水浒人物的卡片。我买了一包，吃了方便面，饱了。而我又买了第二包，不是想吃方便面，而是仅仅想得到里面的卡片…          </p>
-</blockquote>
-<span id="more"></span>
+        <h1 id="Gitment"><a href="#Gitment" class="headerlink" title="Gitment"></a>Gitment</h1><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/gitment"><img src="https://img.shields.io/npm/v/gitment.svg" alt="NPM version"></a></p>
+<p>Gitment is a comment system based on GitHub Issues,<br>which can be used in the frontend without any server-side implementation.</p>
+<p><a target="_blank" rel="noopener" href="https://imsun.github.io/gitment/">Demo Page</a></p>
+<p><a target="_blank" rel="noopener" href="https://imsun.net/posts/gitment-introduction/">中文简介</a></p>
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#get-started">Get Started</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#customize">Customize</a></li>
+<li><a href="#about-security">About Security</a></li>
+</ul>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><ul>
+<li>GitHub Login</li>
+<li>Markdown / GFM support</li>
+<li>Syntax highlighting</li>
+<li>Notifications from GitHub</li>
+<li>Easy to customize</li>
+<li>No server-side implementation</li>
+</ul>
+<h2 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h2><h3 id="1-Install"><a href="#1-Install" class="headerlink" title="1. Install"></a>1. Install</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://imsun.github.io/gitment/style/default.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>##<strong>一、简介</strong><br>pushState是html5中提供的方法，用以</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://imsun.github.io/gitment/dist/gitment.browser.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>or via npm:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i --save gitment</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;gitment/style/default.css&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Gitment <span class="keyword">from</span> <span class="string">&#x27;gitment&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Register-An-OAuth-Application"><a href="#2-Register-An-OAuth-Application" class="headerlink" title="2. Register An OAuth Application"></a>2. Register An OAuth Application</h3><p><a target="_blank" rel="noopener" href="https://github.com/settings/applications/new">Click here</a> to register an OAuth application, and you will get a client ID and a client secret.</p>
+<p>Make sure the callback URL is right. Generally it’s the origin of your site, like <a target="_blank" rel="noopener" href="https://imsun.net/">https://imsun.net</a>.</p>
+<h3 id="3-Render-Gitment"><a href="#3-Render-Gitment" class="headerlink" title="3. Render Gitment"></a>3. Render Gitment</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> gitment = <span class="keyword">new</span> Gitment(&#123;</span><br><span class="line">  id: <span class="string">&#x27;Your page ID&#x27;</span>, <span class="comment">// optional</span></span><br><span class="line">  owner: <span class="string">&#x27;Your GitHub ID&#x27;</span>,</span><br><span class="line">  repo: <span class="string">&#x27;The repo to store comments&#x27;</span>,</span><br><span class="line">  oauth: &#123;</span><br><span class="line">    client_id: <span class="string">&#x27;Your client ID&#x27;</span>,</span><br><span class="line">    client_secret: <span class="string">&#x27;Your client secret&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="comment">// For more available options, check out the documentation below</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gitment.render(<span class="string">&#x27;comments&#x27;</span>)</span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="comment">// gitment.render(document.getElementById(&#x27;comments&#x27;))</span></span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="comment">// document.body.appendChild(gitment.render())</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-Initialize-Your-Comments"><a href="#4-Initialize-Your-Comments" class="headerlink" title="4. Initialize Your Comments"></a>4. Initialize Your Comments</h3><p>After the page published, you should visit your page, login with your GitHub account(make sure you’re repo’s owner), and click the initialize button, to create a related issue in your repo.<br>After that, others can leave their comments.</p>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="constructor-options"><a href="#constructor-options" class="headerlink" title="constructor(options)"></a>constructor(options)</h3><h4 id="options"><a href="#options" class="headerlink" title="options:"></a>options:</h4><p>Type: <code>object</code> </p>
 <ul>
-<li>无刷新的更新浏览器地址栏；            </li>
-<li>如其名称，将新地址push到历史堆栈中            </li>
+<li>owner: Your GitHub ID. Required.</li>
+<li>repo: The repository to store your comments. Make sure you’re repo’s owner. Required.</li>
+<li>oauth: An object contains your client ID and client secret. Required.<ul>
+<li>client_id: GitHub client ID. Required.</li>
+<li>client_secret: GitHub client secret. Required.</li>
 </ul>
-<p>用法：<code>pushState(data, title ,url)</code>            </p>
-<p>data为保存的对象，可以在window.onpopstate时获取到；title为页面标题；url为需地址栏和历史发生改变的url。<br>正是这点看似很平常的功能，跟ajax结合到一起产生了火花。因为，ajax最擅长的事情就是局部刷新页面。</p>
-<p>##<strong>二、ajax的纠结历史</strong><br>一切可以从ajax最擅长的事情说起。<br>ajax作为一个异步请求模型，从最初设计开始，也许压根就没打算将它跟浏览器历史挂钩。原因是历史堆栈所记录的，某种意思上可以说是顺序，跟我们理解的“同步”更为密切。</p>
-<p>因而，<code>ajax可以无刷新改变页面内容，却无法改变页面的url</code>。</p>
-<ul>
-<li>####历史问题1 - 如何操控历史</li>
-</ul>
-<p>当单页面越来越流行，操作记录却很容易被忽略。假设有这样的单页面，按照分类点击，界面逐层递进：<code>体育 - 篮球 -nba -马刺队 - 邓肯</code><br>当我们点了4下到“邓肯”界面时，一个不小心的刷新，出现在你面前的也许是“体育”。原因是操作记录没有被记录。<br>而通常的解决方案是修改hash，每递进一层，去更新url的hash值，这样的方法：</p>
-<ol>
-<li>刷新时预先判断url的hash，从而知道这是哪一层，加载相应数据；          </li>
-<li>支持了历史</li>
-</ol>
-<p>这样的方式貌似比较完善，其实不然。</p>
-<ul>
-<li>####历史问题2 - 对搜索引擎不友好</li>
-</ul>
-<p>最大的问题是，hash后生成的内容是不会被搜索引擎引用到。数据不能被爬取，无疑是浪费和损失。因此google放言，咱可以约定个协议：<code>#!xxx</code>这样hash的url，google也去爬取。称之为<code>hash bang</code>（哈希大爆炸？）。这一协议，在g+，twitter，人人，新浪微博上都可以看到。</p>
-<p>事实上，ajax最或缺的两个问题，恰好被pushState的功能补充完善。</p>
-<p>##<strong>三、pjax带来的价值</strong><br>除去补齐了ajax的问题，我们发现pjax会给web带来更多的好处。<br>回到开始说的“两包方便面”，我的意思是，有时你访问两个url，部分数据是相同的。比如百度贴吧，第一页和第二页的区别只是帖子内容（卡片）的不同，网站外框部分（方便面）都是一样的，这些东西就不需要在页面刷新时重复加载。</p>
-<p>ajax处理这样的局部刷新，已经给我们带来了web2.0的体验，而加上pushstate的ajax则更进一步：</p>
-<ol>
-<li>一个url对应一套数据，有利于SEO；</li>
-<li>更改数据和url时，只是局部刷新，带来较好的用户体验；</li>
-<li>兼容性好，对不支持pushstate的浏览器，url也能正常请求页面（虽然有重复加载）；</li>
-<li>刷新页面时，由于是url唯一，能正常加载到用户希望看到的数据，比处理hash的方式更方便；</li>
-<li>后退与前进的浏览器操作，依然可以局部刷新（通过onpushstate事件捕获）</li>
-</ol>
-<p>##<strong>四、注意事项</strong></p>
-<p>然而pjax不等于单纯的分离使用pushstate与ajax，还必须得做一些封装。缘于以下我能想到的注意事项：</p>
-<ul>
-<li><p>服务器端增加额外处理逻辑<br>服务器端，需要根据请求的参数，作出全页渲染或局部渲染响应</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Accept:text&#x2F;html, *&#x2F;*; q&#x3D;0.01</span><br><span class="line">Accept-Encoding:gzip,deflate,sdch</span><br><span class="line">Connection:keep-alive</span><br><span class="line">Host:qianduannotes.duapp.com</span><br><span class="line">User-Agent:AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;31.0.1650.63 Safari&#x2F;537.36</span><br><span class="line">X-Requested-With:XMLHttpRequest</span><br><span class="line">X-PJAX:true</span><br></pre></td></tr></table></figure>
-<p>比如请求头部可以设定一个X-PAJX:true，用以通知服务器。</p>
 </li>
-<li><p>浏览器兼容<br>假如浏览器不支持pushstate，提供fallback操作，直接打开需更改url的地址：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.support.pjax &#x3D; window.history &amp;&amp; window.history.pushState</span><br><span class="line">&#x2F;&#x2F; Fallback</span><br><span class="line">if ( !$.support.pjax ) &#123;</span><br><span class="line">  $.pjax &#x3D; function( options ) &#123;</span><br><span class="line">    window.location &#x3D; $.isFunction(options.url) ? options.url() : options.url</span><br><span class="line">  &#125;</span><br><span class="line">  $.fn.pjax &#x3D; function() &#123; return this &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>本地存储机制<br>无疑pjax与localstorage共同使用可以进一步提升体验，但这一步容易忽略的是数据上报。</p>
-</li>
+<li>id: An optional string to identify your page. Default <code>location.href</code>.</li>
+<li>title: An optional title for your page, used as issue’s title. Default <code>document.title</code>.</li>
+<li>link: An optional link for your page, used in issue’s body. Default <code>location.href</code>.</li>
+<li>desc: An optional description for your page, used in issue’s body. Default <code>&#39;&#39;</code>.</li>
+<li>labels: An optional array of labels your want to add when creating the issue. Default <code>[]</code>.</li>
+<li>theme: An optional Gitment theme object. Default <code>gitment.defaultTheme</code>.</li>
+<li>perPage: An optional number to which comments will be paginated. Default <code>20</code>.</li>
+<li>maxCommentHeight: An optional number to limit comments’ max height, over which comments will be folded. Default <code>250</code>.</li>
 </ul>
-<p>##<strong>五、参考资料</strong><br><a target="_blank" rel="noopener" href="https://github.com/defunkt/jquery-pjax">jquery-pjax</a><br><a target="_blank" rel="noopener" href="https://github.com/welefen/pjax">welefen封装的pjax</a></p>
+<h3 id="gitment-render-element"><a href="#gitment-render-element" class="headerlink" title="gitment.render([element])"></a>gitment.render([element])</h3><h4 id="element"><a href="#element" class="headerlink" title="element"></a>element</h4><p>Type: <code>HTMLElement</code> or <code>string</code></p>
+<p>The DOM element to which comments will be rendered. Can be an HTML element or element’s id. When omitted, this function will create a new <code>div</code> element.</p>
+<p>This function returns the element to which comments be rendered.</p>
+<h3 id="gitment-renderHeader-element"><a href="#gitment-renderHeader-element" class="headerlink" title="gitment.renderHeader([element])"></a>gitment.renderHeader([element])</h3><p>Same like <code>gitment.render([element])</code>. But only renders the header.</p>
+<h3 id="gitment-renderComments-element"><a href="#gitment-renderComments-element" class="headerlink" title="gitment.renderComments([element])"></a>gitment.renderComments([element])</h3><p>Same like <code>gitment.render([element])</code>. But only renders comments list.</p>
+<h3 id="gitment-renderEditor-element"><a href="#gitment-renderEditor-element" class="headerlink" title="gitment.renderEditor([element])"></a>gitment.renderEditor([element])</h3><p>Same like <code>gitment.render([element])</code>. But only renders the editor.</p>
+<h3 id="gitment-renderFooter-element"><a href="#gitment-renderFooter-element" class="headerlink" title="gitment.renderFooter([element])"></a>gitment.renderFooter([element])</h3><p>Same like <code>gitment.render([element])</code>. But only renders the footer.</p>
+<h3 id="gitment-init"><a href="#gitment-init" class="headerlink" title="gitment.init()"></a>gitment.init()</h3><p>Initialize a new page. Returns a <code>Promise</code> and resolves when initialized.</p>
+<h3 id="gitment-update"><a href="#gitment-update" class="headerlink" title="gitment.update()"></a>gitment.update()</h3><p>Update data and views. Returns a <code>Promise</code> and resolves when data updated. </p>
+<h3 id="gitment-post"><a href="#gitment-post" class="headerlink" title="gitment.post()"></a>gitment.post()</h3><p>Post comment in the editor. Returns a <code>Promise</code> and resolves when posted.</p>
+<h3 id="gitment-markdown-text"><a href="#gitment-markdown-text" class="headerlink" title="gitment.markdown(text)"></a>gitment.markdown(text)</h3><h4 id="text"><a href="#text" class="headerlink" title="text"></a>text</h4><p>Type: <code>string</code></p>
+<p>Returns a <code>Promise</code> and resolves rendered text.</p>
+<h3 id="gitment-login"><a href="#gitment-login" class="headerlink" title="gitment.login()"></a>gitment.login()</h3><p>Jump to GitHub OAuth page to login.</p>
+<h3 id="gitment-logout"><a href="#gitment-logout" class="headerlink" title="gitment.logout()"></a>gitment.logout()</h3><p>Log out current user.</p>
+<h3 id="goto-page"><a href="#goto-page" class="headerlink" title="goto(page)"></a>goto(page)</h3><h4 id="page"><a href="#page" class="headerlink" title="page"></a>page</h4><p>Type: <code>number</code></p>
+<p>Jump to the target page of comments. Notice that <code>page</code> starts from <code>1</code>. Returns a <code>Promise</code> and resolves when comments loaded.</p>
+<h3 id="gitment-like"><a href="#gitment-like" class="headerlink" title="gitment.like()"></a>gitment.like()</h3><p>Like current page. Returns a <code>Promise</code> and resolves when liked.</p>
+<h3 id="gitment-unlike"><a href="#gitment-unlike" class="headerlink" title="gitment.unlike()"></a>gitment.unlike()</h3><p>Unlike current page. Returns a <code>Promise</code> and resolves when unliked.</p>
+<h3 id="gitment-likeAComment-commentId"><a href="#gitment-likeAComment-commentId" class="headerlink" title="gitment.likeAComment(commentId)"></a>gitment.likeAComment(commentId)</h3><h4 id="commentId"><a href="#commentId" class="headerlink" title="commentId"></a>commentId</h4><p>Type: <code>string</code></p>
+<p>Like a comment. Returns a <code>Promise</code> and resolves when liked.</p>
+<h3 id="gitment-unlikeAComment-commentId"><a href="#gitment-unlikeAComment-commentId" class="headerlink" title="gitment.unlikeAComment(commentId)"></a>gitment.unlikeAComment(commentId)</h3><h4 id="commentId-1"><a href="#commentId-1" class="headerlink" title="commentId"></a>commentId</h4><p>Type: <code>string</code></p>
+<p>Unlike a comment. Returns a <code>Promise</code> and resolves when unliked.</p>
+<h2 id="Customize"><a href="#Customize" class="headerlink" title="Customize"></a>Customize</h2><p>Gitment is easy to customize. You can use your own CSS or write a theme.<br>(The difference is that customized CSS can’t modify DOM structure)</p>
+<h3 id="Use-Customized-CSS"><a href="#Use-Customized-CSS" class="headerlink" title="Use Customized CSS"></a>Use Customized CSS</h3><p>Gitment does’t use any atomic CSS, making it easier and more flexible to customize.<br>You can inspect the DOM structure in the browser and write your own styles.</p>
+<h3 id="Write-A-Theme"><a href="#Write-A-Theme" class="headerlink" title="Write A Theme"></a>Write A Theme</h3><p>A Gitment theme is an object contains several render functions.</p>
+<p>By default Gitment has five render functions: <code>render</code>, <code>renderHeader</code>, <code>renderComments</code>, <code>renderEditor</code>, <code>renderFooter</code>.<br>The last four render independent components and <code>render</code> function renders them together.<br>All of them can be used independently.</p>
+<p>You can override any render function above or write your own render function.</p>
+<p>For example, you can override the <code>render</code> function to put editor before comments list, and render a new component.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myTheme = &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params">state, instance</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> container = <span class="built_in">document</span>.createElement(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">    container.lang = <span class="string">&quot;en-US&quot;</span></span><br><span class="line">    container.className = <span class="string">&#x27;gitment-container gitment-root-container&#x27;</span></span><br><span class="line">    </span><br><span class="line">     <span class="comment">// your custom component</span></span><br><span class="line">    container.appendChild(instance.renderSomething(state, instance))</span><br><span class="line">    </span><br><span class="line">    container.appendChild(instance.renderHeader(state, instance))</span><br><span class="line">    container.appendChild(instance.renderEditor(state, instance))</span><br><span class="line">    container.appendChild(instance.renderComments(state, instance))</span><br><span class="line">    container.appendChild(instance.renderFooter(state, instance))</span><br><span class="line">    <span class="keyword">return</span> container</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="function"><span class="title">renderSomething</span>(<span class="params">state, instance</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> container = <span class="built_in">document</span>.createElement(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line">    container.lang = <span class="string">&quot;en-US&quot;</span></span><br><span class="line">    <span class="keyword">if</span> (state.user.login) &#123;</span><br><span class="line">      container.innerText = <span class="string">`Hello, <span class="subst">$&#123;state.user.login&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> container</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gitment = <span class="keyword">new</span> Gitment(&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  theme: myTheme,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">gitment.render(<span class="built_in">document</span>.body)</span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="comment">// gitment.renderSomthing(document.body)</span></span><br></pre></td></tr></table></figure>
+
+<p>Each render function should receive a state object and a gitment instance, and return an HTML element.<br>It will be wrapped attached to the Gitment instance with the same name.</p>
+<p>Gitment uses <a target="_blank" rel="noopener" href="https://github.com/mobxjs/mobx">MobX</a> to detect states used in render functions.<br>Once used states change, Gitment will call the render function to get a new element and render it.<br>Unused states’ changing won’t affect rendered elements.</p>
+<p>Available states:</p>
+<ul>
+<li>user: <code>object</code>. User info returned from <a target="_blank" rel="noopener" href="https://developer.github.com/v3/users/#get-the-authenticated-user">GitHub Users API</a> with two more keys.<ul>
+<li>isLoggingIn: <code>bool</code>. Indicates if user is logging in.</li>
+<li>fromCache: <code>bool</code>. Gitment will cache user’s information. Its value indicates if current user info is from cache.</li>
+</ul>
+</li>
+<li>error: <code>Error Object</code>. Will be null if no error occurs.</li>
+<li>meta: <code>object</code>. Issue’s info returned from <a target="_blank" rel="noopener" href="https://developer.github.com/v3/issues/#list-issues">GitHub Issues API</a>.</li>
+<li>comments: <code>array</code>. Array of comment returned from <a href="/repos/:owner/:repo/issues/:number/comments">GitHub Issue Comments API</a>. Will be <code>undefined</code> when comments not loaded.</li>
+<li>reactions: <code>array</code>. Array of reactions added to current page, returned from <a target="_blank" rel="noopener" href="https://developer.github.com/v3/reactions/#list-reactions-for-an-issue">GitHub Issues’ Reactions API</a>.</li>
+<li>commentReactions: <code>object</code>. Object of reactions added to comments, with comment ID as key, returned from <a href="/repos/:owner/:repo/issues/comments/:id/reactions">GitHub Issue Comments’ Reactions API</a>.</li>
+<li>currentPage: <code>number</code>. Which page of comments is user on. Starts from <code>1</code>.</li>
+</ul>
+<h2 id="About-Security"><a href="#About-Security" class="headerlink" title="About Security"></a>About Security</h2><h3 id="Is-it-safe-to-make-my-client-secret-public"><a href="#Is-it-safe-to-make-my-client-secret-public" class="headerlink" title="Is it safe to make my client secret public?"></a>Is it safe to make my client secret public?</h3><p>Client secret is necessary for OAuth, without which users can’t login or comment with their GitHub accounts.<br>Although GitHub does’t recommend to hard code client secret in the frontend, you can still do that because GitHub will verify your callback URL.<br>In theory, no one else can use your secret except your site.</p>
+<p>If you find a way to hack it, please <a target="_blank" rel="noopener" href="https://github.com/imsun/gitment/issues/new">open an issue</a>.</p>
+<h3 id="Why-does-Gitment-send-a-request-to-gh-oauth-imsun-net"><a href="#Why-does-Gitment-send-a-request-to-gh-oauth-imsun-net" class="headerlink" title="Why does Gitment send a request to gh-oauth.imsun.net?"></a>Why does Gitment send a request to gh-oauth.imsun.net?</h3><p><a target="_blank" rel="noopener" href="https://gh-oauth.imsun.net/">https://gh-oauth.imsun.net</a> is an simple open-source service to proxy <a target="_blank" rel="noopener" href="https://developer.github.com/v3/oauth/#2-github-redirects-back-to-your-site">one request</a> during users logging in.<br>Because GitHub does’t attach a CORS header to it.</p>
+<p>This service won’t record or store anything, only proxy and attach a CORS header to that request.<br>So that users can login in the frontend without any server-side implementation.</p>
+<p>For more details, checkout <a target="_blank" rel="noopener" href="https://github.com/imsun/gh-oauth-server">this project</a>.</p>
 
       
 
@@ -226,21 +263,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -291,7 +313,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://willianlu.github.io/blog/2014/02/12/test/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://willianlu.github.io/blog/gitment/README.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,20 +325,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-    <a href="/blog/2021/02/25/index/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          我曾七次鄙视自己的灵魂
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -352,7 +360,7 @@
 <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://willianlu.github.io/blog/blog/2014/02/12/test/",
+  id: "https://willianlu.github.io/blog/blog/gitment/README.html",
   owner: 'willianLu',
   repo: 'blog_comments',
   oauth: {
@@ -386,7 +394,7 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
