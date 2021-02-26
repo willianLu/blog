@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://willianlu.github.io/blog">
-  <title>我曾七次鄙视自己的灵魂 | 一花一世界</title>
+  <title>javascript基础知识点 | 一花一世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作者：纪·哈·纪伯伦第一次，当它本可进取时，却故作谦卑；第二次，当它在空虚时，用爱欲来填充；第三次，在困难和容易之间，它选择了容易；第四次，它犯了错，却借由别人也会犯错来宽慰自己；第五次，它自由软弱，却把它认为是生命的坚韧；第六次，当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副；第七次，它侧身于生活的污泥中，虽不甘心，却又畏首畏尾。">
+  <meta name="description" content="隐式类型转换加法的隐式转换规则：  如果两边都是数字，则就是普通的数学计算 如果有一边是字符串，则另一边也转成字符串，变成字符串的拼接 如果没有字符串，则调用Number方法，转成数字，再进行相加 如果有一边是对象，则对象调用toString得到字符串表示，再进行计算">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我曾七次鄙视自己的灵魂">
-<meta property="og:url" content="https://willianlu.github.io/blog/2021/02/25/index/index.html">
+<meta property="og:title" content="javascript基础知识点">
+<meta property="og:url" content="https://willianlu.github.io/blog/2021/02/25/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
 <meta property="og:site_name" content="一花一世界">
-<meta property="og:description" content="作者：纪·哈·纪伯伦第一次，当它本可进取时，却故作谦卑；第二次，当它在空虚时，用爱欲来填充；第三次，在困难和容易之间，它选择了容易；第四次，它犯了错，却借由别人也会犯错来宽慰自己；第五次，它自由软弱，却把它认为是生命的坚韧；第六次，当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副；第七次，它侧身于生活的污泥中，虽不甘心，却又畏首畏尾。">
+<meta property="og:description" content="隐式类型转换加法的隐式转换规则：  如果两边都是数字，则就是普通的数学计算 如果有一边是字符串，则另一边也转成字符串，变成字符串的拼接 如果没有字符串，则调用Number方法，转成数字，再进行相加 如果有一边是对象，则对象调用toString得到字符串表示，再进行计算">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-25T04:00:00.000Z">
-<meta property="article:modified_time" content="2021-02-26T10:33:33.167Z">
+<meta property="article:published_time" content="2021-02-25T09:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-25T09:41:53.499Z">
 <meta property="article:author" content="lukunkun">
-<meta property="article:tag" content="诗歌">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="一花一世界" type="application/atom+xml">
@@ -143,27 +143,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-index" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-js基础知识点" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我曾七次鄙视自己的灵魂
+      javascript基础知识点
     </h1>
   
 
         
-        <a href="/blog/2021/02/25/index/" class="archive-article-date">
-  	<time datetime="2021-02-25T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
+        <a href="/blog/2021/02/25/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
+  	<time datetime="2021-02-25T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="作者：纪·哈·纪伯伦"><a href="#作者：纪·哈·纪伯伦" class="headerlink" title="作者：纪·哈·纪伯伦"></a>作者：纪·哈·纪伯伦</h3><p>第一次，当它本可进取时，却故作谦卑；<br>第二次，当它在空虚时，用爱欲来填充；<br>第三次，在困难和容易之间，它选择了容易；<br>第四次，它犯了错，却借由别人也会犯错来宽慰自己；<br>第五次，它自由软弱，却把它认为是生命的坚韧；<br>第六次，当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副；<br>第七次，它侧身于生活的污泥中，虽不甘心，却又畏首畏尾。</p>
+        <h4 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h4><p>加法的隐式转换规则：</p>
+<ol>
+<li>如果两边都是数字，则就是普通的数学计算</li>
+<li>如果有一边是字符串，则另一边也转成字符串，变成字符串的拼接</li>
+<li>如果没有字符串，则调用Number方法，转成数字，再进行相加</li>
+<li>如果有一边是对象，则对象调用toString得到字符串表示，再进行计算</li>
+</ol>
+  <span id="more"></span>
+
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + <span class="number">1</span> =&gt; <span class="number">2</span></span><br><span class="line"><span class="string">&#x27;a&#x27;</span> + <span class="number">1</span> =&gt; <span class="string">&#x27;a1&#x27;</span></span><br><span class="line"><span class="literal">null</span> + <span class="number">1</span> =&gt; <span class="number">1</span></span><br><span class="line"><span class="keyword">const</span> fun = <span class="function">() =&gt;</span> &#123;&#125;</span><br><span class="line">fun + <span class="number">1</span> =&gt; <span class="string">&#x27;() =&gt; &#123;&#125;1&#x27;</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;</span><br><span class="line">obj + <span class="number">1</span> =&gt; <span class="string">&#x27;[object Object]1&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>“==”隐式转换规则：</p>
+<ol>
+<li>数字与字符串比较时，字符串转换为数字</li>
+<li>有一边为布尔值，则将布尔值转换为1 / 0</li>
+<li>nul == undefined , 除此之外 null 与 undefined 与其他任何值都不相等</li>
+<li>有一边对象或者数组类型，另一边是数字或字符串，则需要调用toString()或者valueOf()方法转化成简单类型，然后进行比较</li>
+</ol>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> == <span class="string">&#x27;1&#x27;</span> =&gt; <span class="literal">true</span></span><br><span class="line"><span class="number">1</span> == <span class="function"><span class="params">true</span> =&gt;</span> <span class="literal">true</span></span><br><span class="line"><span class="number">0</span> == <span class="function"><span class="params">false</span> =&gt;</span> <span class="literal">true</span></span><br><span class="line"><span class="literal">null</span> == <span class="function"><span class="params">undefined</span> =&gt;</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;</span><br><span class="line">obj == <span class="string">&#x27;[object Object]&#x27;</span> =&gt; <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数组常用方法"><a href="#数组常用方法" class="headerlink" title="数组常用方法"></a>数组常用方法</h4><ul>
+<li>push()      向数组的末尾增加一项成员 返回值 -&gt; 增加后数组的长度</li>
+<li>unshift()   向数组的开头增加一项成员 返回值 -&gt; 增加后数组的长度</li>
+<li>pop()        从数组的末尾删除一项成员 返回值 -&gt; 删除项</li>
+<li>shift()       从数组的开头删除一项成员 返回值 -&gt; 删除项</li>
+<li>sort()        排序 在原始的数组上进行排序  不传参数 默认按照ASCII值进行排序 传函数参数 参数应该具有两个参数a 和 b， 函数返回值 a &lt; b, a 就在 b 之前；a = b，a 和 b 不换位置；a &gt; b, a 排在 b 后。</li>
+<li>slice()        截取数组，参数[startIndex， endIndex），返回一个新的数组。</li>
+<li>splice()      删除/新增数组成员， 参数1开始删除位置的索引（包含），参数2 要删除多少项，参数3新增的项（从删除的位置新增）。</li>
+<li>indexOf()   查询传入参数所在位置的索引，没有返回-1。</li>
+<li>includes()  查询传入参数是否存在在数组中，返回一个布尔值。</li>
+<li>find()         参数是一个函数，返回数组中第一个符合条件的成员。</li>
+<li>findIndex() 参数是一个函数，返回数组中第一个符合条件的成员的索引。</li>
+<li>Array.of()   更正了Array()创建数组时只传一个参数的问题。</li>
+<li>Array.from() 可以将类数组转换为真正的数组</li>
+</ul>
 
       
 
@@ -177,7 +211,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">诗歌</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -233,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://willianlu.github.io/blog/2021/02/25/index/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://willianlu.github.io/blog/2021/02/25/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -247,15 +281,20 @@
   
 <nav id="article-nav">
   
-    <a href="/blog/2021/02/25/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2021/02/26/%E5%89%8D%E7%AB%AF%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E5%AE%9E%E8%B7%B5/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          javascript基础知识点
+          前端用户体验实践
         
       </div>
     </a>
   
+  
+    <a href="/blog/2021/02/25/index/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我曾七次鄙视自己的灵魂</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -283,7 +322,7 @@
   
 
   
-  <div id="SOHUCS" sid="index" ></div> 
+  <div id="SOHUCS" sid="js基础知识点" ></div> 
 <script charset="utf-8" type="text/javascript" src="//cy-cdn.kuaizhan.com/upload/changyan.js" ></script>
 <style>
     

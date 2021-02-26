@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://willianlu.github.io/blog">
-  <title>Archives: 2014/2 | 一花一世界</title>
+  <title>HTML语义化 | 一花一世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一花一世界">
-<meta property="og:url" content="https://willianlu.github.io/blog/archives/2014/02/index.html">
+  <meta name="description" content="前言 在我刚入门做前端的那几年，对HTML语义化始终只是有一个模糊的概念，大致的认为方向是有利于代码阅读和维护，有利于SEO（也只是有一个概念而已）。所以当时并不重视HTML语义化，多数时候就是为了快速还原设计稿，大部分标签都采用div，虽然在功能和样式上并没有什么不妥，甚至在所谓“高效”开发之后还沾沾自喜，殊不知已经走向了误区。直到后来阅读了许多相关方面的文献资料（大部分是博客，感谢每一个为技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML语义化">
+<meta property="og:url" content="https://willianlu.github.io/blog/2021/02/26/html%E8%AF%AD%E4%B9%89%E5%8C%96/index.html">
 <meta property="og:site_name" content="一花一世界">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="前言 在我刚入门做前端的那几年，对HTML语义化始终只是有一个模糊的概念，大致的认为方向是有利于代码阅读和维护，有利于SEO（也只是有一个概念而已）。所以当时并不重视HTML语义化，多数时候就是为了快速还原设计稿，大部分标签都采用div，虽然在功能和样式上并没有什么不妥，甚至在所谓“高效”开发之后还沾沾自喜，殊不知已经走向了误区。直到后来阅读了许多相关方面的文献资料（大部分是博客，感谢每一个为技术">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-26T08:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-26T10:31:13.798Z">
 <meta property="article:author" content="lukunkun">
 <meta name="twitter:card" content="summary">
   
@@ -81,8 +83,6 @@
 				
 					<a class="github" target="_blank" href="https://github.com/willianLu" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="rss" target="_blank" href="http://121.37.190.56/" title="rss"><i class="icon-rss"></i></a>
-		        
 			</div>
 		</nav>
 	</header>		
@@ -118,8 +118,6 @@
 					
 						<a class="github" target="_blank" href="https://github.com/willianLu" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="rss" target="_blank" href="http://121.37.190.56/" title="rss"><i class="icon-rss"></i></a>
-			        
 				</div>
 			</nav>
 
@@ -144,64 +142,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-html语义化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2014" class="archive-year">2014</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2014/02/12/test/" class="archive-article-date">
-  	<time datetime="2014-02-12T00:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2014-02-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2014/02/12/test/">pjax: 当ajax遇上pushState</a>
+    <h1 class="article-title" itemprop="name">
+      HTML语义化
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href="/blog/2021/02/26/html%E8%AF%AD%E4%B9%89%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2021-02-26T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>在我刚入门做前端的那几年，对HTML语义化始终只是有一个模糊的概念，大致的认为方向是有利于代码阅读和维护，有利于SEO（也只是有一个概念而已）。所以当时并不重视HTML语义化，多数时候就是为了快速还原设计稿，大部分标签都采用div，虽然在功能和样式上并没有什么不妥，甚至在所谓“高效”开发之后还沾沾自喜，殊不知已经走向了误区。直到后来阅读了许多相关方面的文献资料（大部分是博客，感谢每一个为技术进步努力的人），才认知到HTML语义化的重要性，它不再是冷冰冰的单一技术功能，还增添了许多人文关怀，一下就将不太有趣的工作变得更加有意义。</p>
+</blockquote>
+<span id="more"></span>
 
-          
+<h4 id="HTML语义化的意义"><a href="#HTML语义化的意义" class="headerlink" title="HTML语义化的意义"></a>HTML语义化的意义</h4><ul>
+<li>语义化标签对开发者更友好，使代码更加具有可读性，从而更利于维护；</li>
+<li>易于用户阅读，在样式丢失的情况下让页面呈现清晰的结构；</li>
+<li>有利于SEO，语义化标签十分适宜机器阅读，可以让搜索引擎获取更多的有效数据；</li>
+<li>方便其他设备解析，比方说一些辅助阅读器之类的。</li>
+</ul>
+<p>语义化的意义，对我们来说相当容易理解，从网上我们也能搜索到很多相关介绍文章，其具体实现我不在做过多介绍，附上相关链接，请自行阅读。</p>
+<p>[附录]<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element">HTML元素参考</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903817968893960">【译】停止滥用div! HTML语义化介绍</a></p>
+<p>下面我想重点介绍下，HTML语义化对于可访问性的意义，限于本人的技术水平和表达能力，若是有什么不足之处还望海涵。<br>可访问性，在网站开发中是非常重要的一环，然而也是更容易被忽视的。这并不是简单的前端开发问题，它和产品、设计都有所关联。以我以往的工作经验来看，产品更注重功能，设计更注重UI效果，虽然用户体验上不至于一塌糊涂，但对无障碍的可访问性却鲜有涉猎。我们可能缺少了一份人文关怀，或者说我们从未想过自己的工作和人文关怀会扯上什么关系，我们虽然不是圣人，但我想多数人都有一颗圣人的心。若是我们在工作当中也带着一份爱，对于我们的职业观和人生观或多或少都会有一些影响，也许它会使你变得更好。不管如何，但愿对你有积极的影响。</p>
+<blockquote>
+<p>假设我们的用户是一位残障人士，需要借助屏幕阅读器来浏览我们的网站，如是没有做到语义化，可能阅读器无法理解我们的代码，从而造成阅读困难；亦或者是一群不方便使用鼠标的用户，比如说超市收银、仓库收货或者吃东西时，也需要更方便的使用我们的网站，当然这不仅仅是语义化的问题，只是语义化能更好的支持键盘操作。</p>
+</blockquote>
+<p>从以上来看，无非说得就是用户体验的问题，只是这些方面与HTML语义化有着紧密的关系，希望我们能从更高的层次来看待语义化的问题。具体的实现方案已经有优质的文章，我便不再赘述（才疏学浅，只会误人子弟），附上相关文章，大家自行阅读。</p>
+<p>[附录]<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/Accessibility/HTML">HTML: 为可访问性提供一个良好的基础</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6932647134944886797">前端优秀实践不完全指南</a></p>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo" title="微博">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin" title="微信">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq" title="QQ">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban" title="豆瓣">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone" title="QQ空间">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook" title="脸书">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter" title="推特">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google" title="谷歌">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://willianlu.github.io/blog/2021/02/26/html%E8%AF%AD%E4%B9%89%E5%8C%96/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/blog/2021/02/26/%E5%89%8D%E7%AB%AF%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E5%AE%9E%E8%B7%B5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端用户体验实践</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
+  
+  <div id="SOHUCS" sid="html语义化" ></div> 
+<script charset="utf-8" type="text/javascript" src="//cy-cdn.kuaizhan.com/upload/changyan.js" ></script>
+<style>
     
+</style>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cyvkfCtfx",
+        conf: "prod_1983e8cd9edea3f28063612b0bb27aa4"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -226,8 +326,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -300,7 +400,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">html5</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">用户体验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">诗歌</a>
               </li>
             
             <div class="clearfix"></div>
