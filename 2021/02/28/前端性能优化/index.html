@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://willianlu.github.io/blog">
-  <title>Archives | 一花一世界</title>
+  <title>前端性能优化 | 一花一世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一花一世界">
-<meta property="og:url" content="https://willianlu.github.io/blog/archives/index.html">
+  <meta name="description" content="前端性能优化是指用户从开始访问网站开始到整个页面完整的展示出来的过程中，我们可以通过各种的优化策略和优化方法来加快页面的加载，让用户的操作响应更加及时，从而增强系统的用户使用感。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端性能优化">
+<meta property="og:url" content="https://willianlu.github.io/blog/2021/02/28/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="一花一世界">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="前端性能优化是指用户从开始访问网站开始到整个页面完整的展示出来的过程中，我们可以通过各种的优化策略和优化方法来加快页面的加载，让用户的操作响应更加及时，从而增强系统的用户使用感。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-28T08:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-28T09:53:47.793Z">
 <meta property="article:author" content="lukunkun">
 <meta name="twitter:card" content="summary">
   
@@ -140,252 +142,190 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-前端性能优化" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      前端性能优化
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/28/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="archive-article-date">
+
+        
+        <a href="/blog/2021/02/28/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="archive-article-date">
   	<time datetime="2021-02-28T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/28/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">前端性能优化</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>前端性能优化是指用户从开始访问网站开始到整个页面完整的展示出来的过程中，我们可以通过各种的优化策略和优化方法来加快页面的加载，让用户的操作响应更加及时，从而增强系统的用户使用感。</p>
+</blockquote>
+<span id="more"></span>
 
-        <div class="article-info info-on-right">
-          
-          
+<h4 id="1-图片资源加载优化"><a href="#1-图片资源加载优化" class="headerlink" title="1.图片资源加载优化"></a>1.图片资源加载优化</h4><ul>
+<li>对图片进行压缩。</li>
+<li>延迟加载图片，在真实的图片加载出来之前，可以使用一张公共的图片，把页面的整个布局撑起来，然后再换成真实的图片。</li>
+<li>合理使用雪碧图，合并图片，减少请求量。</li>
+<li>通过打包工具，使小图片转化成base64编码。</li>
+</ul>
+<h4 id="2-HTML优化"><a href="#2-HTML优化" class="headerlink" title="2.HTML优化"></a>2.HTML优化</h4><ul>
+<li>减少标签嵌套，可以减少DOM树的节点数，让浏览器渲染最少的DOM节点数。</li>
+<li>利用打包工具删除无意义的代码，如空格、注释等</li>
+<li>css文件链接放在页面头部，css加载不会阻塞DOM Tree解析，但是会阻塞DOM Tree的渲染，也会阻塞后面js的执行，所以在DOM Tree在渲染之前解析css，可以减少浏览器重排（<a target="_blank" rel="noopener" href="http://mengyujing.com/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E9%87%8D%E7%BB%98%E4%B8%8E%E9%87%8D%E6%8E%92/">重排与重绘</a>）的次数 ，而且css放在底部会导致页面白屏的时间变长。</li>
+<li>js文件一般放在页面的底部，这是为了防止js的加载和解析阻塞页面元素的正常渲染。</li>
+</ul>
+<h4 id="3-用户体验"><a href="#3-用户体验" class="headerlink" title="3.用户体验"></a>3.用户体验</h4><ul>
+<li>增加首屏必要的css和js。一般页面需要在等待所有的依赖加载完成之后才会展示，这样就会导致页面存在空白，可以增加背景图或者loading或者骨架屏。</li>
+</ul>
+<h4 id="4-css优化细则"><a href="#4-css优化细则" class="headerlink" title="4.css优化细则"></a>4.css优化细则</h4><ul>
+<li>查找并删除未使用的css，显然会加快网页的加载速度。</li>
+<li>使用简写，如margin-top/right/bottom/left =&gt; margin: 0 auto，可以从根本上减少css文件的大小。</li>
+<li>尽量减少样式层级，，如div ul li span i{color:red}，可以给标签设置class来书写样式。</li>
+<li>删除不必要的0和单位，如width:0.1em =&gt; width: .1em，margin: 0px auto =&gt; margin: 0 auto。</li>
+<li>合理使用css选择器，尽量避免使用通配符，避免使用css表达式。</li>
+<li>尽量少使用开销比较大的属性，如 border-radius box-shadow transform transitions filter :nth-child position: fixed。</li>
+<li>使用打包工具对css文件进行（注释、空格等删除）压缩。</li>
+<li>对css文件缓存，使用打包工具动态生成hash名称。<h4 id="5-js优化"><a href="#5-js优化" class="headerlink" title="5.js优化"></a>5.js优化</h4></li>
+<li>慎用全局变量。全局变量定义在全局执行上下文，是所有作用域链的顶端。每次查找的时候都从局部找到最顶端，时间会有所消耗。全局执行上下文一直存在于上下文执行栈，直到程序退出，内存空间浪费。 如果某个局部作用域出现了同名变量则会遮蔽或污染全局。</li>
+<li>缓存全局变量，将使用中无法避免的全局变量缓存到局部。</li>
+<li>避开闭包陷阱，闭包可以在外部作用域访问函数内部作用域的数据。闭包使用不当很容易出现内存泄露，不要为了闭包而闭包。</li>
+<li>通过原型新增方法，而不是在构造函数内部添加方法。</li>
+<li>节点操作优化，减少频繁操作DOM，使用虚拟节点createdocumentfragment或克隆节点cloneNode等方式。</li>
+<li>尽量避免js动画，使用css3动画代替。<h4 id="6-其他优化"><a href="#6-其他优化" class="headerlink" title="6.其他优化"></a>6.其他优化</h4></li>
+<li>为了减少回流发生次数，避免频繁的操作DOM，可以合并多次对DOM统一修改，一次性批量处理。</li>
+<li>可以使用绝对定位让动画元素脱离文档流。</li>
+<li>懒加载，预加载，预渲染。<blockquote>
+<p>懒加载指长页面中延迟加载特定的元素，从而减少当前屏无效资源的加载。<br>预加载是让浏览器预先加载某些资源。<br>预渲染是进行资源的提前渲染。</p>
+</blockquote>
+</li>
+<li>多个接口时，可以合并接口，减少页面接口请求。</li>
+</ul>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo" title="微博">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin" title="微信">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq" title="QQ">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban" title="豆瓣">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone" title="QQ空间">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook" title="脸书">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter" title="推特">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google" title="谷歌">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://willianlu.github.io/blog/2021/02/28/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/28/TCP%E7%AE%80%E4%BB%8B/" class="archive-article-date">
-  	<time datetime="2021-02-28T05:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2021/02/28/TCP%E7%AE%80%E4%BB%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TCP简介</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/28/TCP%E7%AE%80%E4%BB%8B/">TCP简介</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
+  <div id="SOHUCS" sid="前端性能优化" ></div> 
+<script charset="utf-8" type="text/javascript" src="//cy-cdn.kuaizhan.com/upload/changyan.js" ></script>
+<style>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/28/HttpAndHttps/" class="archive-article-date">
-  	<time datetime="2021-02-28T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/28/HttpAndHttps/">HTTP 与 HTTPS的区别</a>
-    </h1>
+</style>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cyvkfCtfx",
+        conf: "prod_1983e8cd9edea3f28063612b0bb27aa4"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/26/html%E8%AF%AD%E4%B9%89%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2021-02-26T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/26/html%E8%AF%AD%E4%B9%89%E5%8C%96/">HTML语义化</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/26/%E5%89%8D%E7%AB%AF%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
-  	<time datetime="2021-02-26T06:07:55.416Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/26/%E5%89%8D%E7%AB%AF%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E5%AE%9E%E8%B7%B5/">前端用户体验实践</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">用户体验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/25/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2021-02-25T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/25/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/">javascript基础知识点</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/25/index/" class="archive-article-date">
-  	<time datetime="2021-02-25T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/25/index/">我曾七次鄙视自己的灵魂</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">诗歌</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -410,8 +350,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
