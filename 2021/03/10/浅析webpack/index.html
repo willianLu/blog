@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://willianlu.github.io/blog">
-  <title>JS实现new | 一花一世界</title>
+  <title>浅析webpack | 一花一世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="实现过程 创建一个新对象 将构造函数的作用域赋值给新对象（原型链接this指向） 执行构造函数中的代码 返回新对象">
+  <meta name="description" content="本质上，webpack 是一个用于现代 JavaScript 应用程序的_静态模块打包工具_。当 webpack 处理应用程序时，它会在内部构建一个 依赖图(dependency graph)，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS实现new">
-<meta property="og:url" content="https://willianlu.github.io/blog/2021/03/01/js%E5%AE%9E%E7%8E%B0new/index.html">
+<meta property="og:title" content="浅析webpack">
+<meta property="og:url" content="https://willianlu.github.io/blog/2021/03/10/%E6%B5%85%E6%9E%90webpack/index.html">
 <meta property="og:site_name" content="一花一世界">
-<meta property="og:description" content="实现过程 创建一个新对象 将构造函数的作用域赋值给新对象（原型链接this指向） 执行构造函数中的代码 返回新对象">
+<meta property="og:description" content="本质上，webpack 是一个用于现代 JavaScript 应用程序的_静态模块打包工具_。当 webpack 处理应用程序时，它会在内部构建一个 依赖图(dependency graph)，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-01T07:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-01T07:43:42.203Z">
+<meta property="article:published_time" content="2021-03-10T10:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-11T07:55:27.354Z">
 <meta property="article:author" content="lukunkun">
-<meta property="article:tag" content="js">
+<meta property="article:tag" content="webpack">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="一花一世界" type="application/atom+xml">
@@ -143,36 +143,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-js实现new" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-浅析webpack" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JS实现new
+      浅析webpack
     </h1>
   
 
         
-        <a href="/blog/2021/03/01/js%E5%AE%9E%E7%8E%B0new/" class="archive-article-date">
-  	<time datetime="2021-03-01T07:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
+        <a href="/blog/2021/03/10/%E6%B5%85%E6%9E%90webpack/" class="archive-article-date">
+  	<time datetime="2021-03-10T10:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h4><ul>
-<li>创建一个新对象</li>
-<li>将构造函数的作用域赋值给新对象（原型链接this指向）</li>
-<li>执行构造函数中的代码</li>
-<li>返回新对象<span id="more"></span>
-
-</li>
+        <blockquote>
+<p>本质上，webpack 是一个用于现代 JavaScript 应用程序的_静态模块打包工具_。当 webpack 处理应用程序时，它会在内部构建一个 依赖图(dependency graph)，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。</p>
+</blockquote>
+<span id="more"></span>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>入口(entry) - 指示 webpack 应该使用哪个模块，来作为构建其内部 依赖图(dependency graph) 的开始。</li>
+<li>输出(output) - output 属性告诉 webpack 在哪里输出它所创建的 bundle，以及如何命名这些文件。</li>
+<li>loader - webpack 只能理解 JavaScript 和 JSON 文件，这是 webpack 开箱可用的自带能力。loader 让 webpack 能够去处理其他类型的文件，并将它们转换为有效 模块，以供应用程序使用，以及被添加到依赖图中。</li>
+<li>插件(plugin) - loader 用于转换某些类型的模块，而插件则可以用于执行范围更广的任务。包括：打包优化，资源管理，注入环境变量。</li>
+<li>模式(mode) - 通过选择 development, production 或 none 之中的一个，来设置 mode 参数，你可以启用 webpack 内置在相应环境下的优化。</li>
+<li>浏览器兼容性(browser compatibility) - webpack 支持所有符合 ES5 标准 的浏览器（不支持 IE8 及以下版本）。</li>
+<li>环境(environment) - webpack 5 运行于 Node.js v10.13.0+ 的版本。<br><a target="_blank" rel="noopener" href="https://webpack.docschina.org/concepts/">官网概念详解</a></li>
 </ul>
-<p>代码实现：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newFun</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> obj = <span class="built_in">Object</span>.create(fn.prototype);</span><br><span class="line">    <span class="keyword">const</span> arg = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">const</span> result = fn.apply(obj, arg)</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> result === <span class="string">&#x27;object&#x27;</span> ? result : obj</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fun2</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        name: <span class="string">&#x27;mk2&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> o1 = <span class="keyword">new</span> Fun(<span class="string">&#x27;mk&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> o2 = <span class="keyword">new</span> Fun2(<span class="string">&#x27;mk&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> o3 = newFun(Fun, <span class="string">&#x27;mk&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> o4 = newFun(Fun2, <span class="string">&#x27;mk&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(o1, o2, o3, o4); <span class="comment">// &#123;name: mk&#125;, &#123;name: mk2&#125;, &#123;name: mk&#125;, &#123;name: mk2&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="打包流程"><a href="#打包流程" class="headerlink" title="打包流程"></a>打包流程</h4><ul>
+<li>初始化配置对象，创建compiler对象</li>
+<li>实例化插件，调用插件的apply方法，挂载插件的监听</li>
+<li>从入口文件执行编译，按照文件类型调用相应的loader，在合适的时间调用plugin执行，并查找各个模块的依赖</li>
+<li>将编译后的代码组装成一个个代码块（chunk），并安依赖和配置确定输出内容</li>
+<li>根据output把文件输出到对应的目录下</li>
+</ul>
+
       
 
       
@@ -185,7 +196,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		
 		</ul>
@@ -241,7 +252,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://willianlu.github.io/blog/2021/03/01/js%E5%AE%9E%E7%8E%B0new/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://willianlu.github.io/blog/2021/03/10/%E6%B5%85%E6%9E%90webpack/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -255,18 +266,18 @@
   
 <nav id="article-nav">
   
-    <a href="/blog/2021/03/02/Eevent-loop/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2021/03/11/%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          js事件循环Event-loop
+          事件代理
         
       </div>
     </a>
   
   
-    <a href="/blog/2021/03/01/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%88%E5%92%8C%E5%A0%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JS数据类型及栈和堆</div>
+    <a href="/blog/2021/03/10/%E6%B5%85%E6%9E%90Bable/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅析Bable</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -296,7 +307,7 @@
   
 
   
-  <div id="SOHUCS" sid="js实现new" ></div> 
+  <div id="SOHUCS" sid="浅析webpack" ></div> 
 <script charset="utf-8" type="text/javascript" src="//cy-cdn.kuaizhan.com/upload/changyan.js" ></script>
 <style>
     
