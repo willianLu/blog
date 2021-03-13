@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://willianlu.github.io/blog">
-  <title>Archives | 一花一世界</title>
+  <title>vue性能优化个人总结 | 一花一世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一花一世界">
-<meta property="og:url" content="https://willianlu.github.io/blog/archives/page/2/index.html">
+  <meta name="description" content="本人从事前端的这几年，使用最多的前端流行框架就是vue，项目中多少会涉及到需要优化的地方，根据个人经验及参考相关资料，做一些简单的总结。由于本人技术水平有限，如果有所错误或缺少重要点，还望指出，谢谢。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue性能优化个人总结">
+<meta property="og:url" content="https://willianlu.github.io/blog/2021/03/13/vue%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="一花一世界">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="本人从事前端的这几年，使用最多的前端流行框架就是vue，项目中多少会涉及到需要优化的地方，根据个人经验及参考相关资料，做一些简单的总结。由于本人技术水平有限，如果有所错误或缺少重要点，还望指出，谢谢。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-13T05:00:00.000Z">
+<meta property="article:modified_time" content="2021-03-13T07:43:55.998Z">
 <meta property="article:author" content="lukunkun">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="一花一世界" type="application/atom+xml">
@@ -140,350 +143,176 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue性能优化个人总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue性能优化个人总结
+    </h1>
+  
+
+        
+        <a href="/blog/2021/03/13/vue%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-03-13T05:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-13</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本人从事前端的这几年，使用最多的前端流行框架就是vue，项目中多少会涉及到需要优化的地方，根据个人经验及参考相关资料，做一些简单的总结。<br>由于本人技术水平有限，如果有所错误或缺少重要点，还望指出，谢谢。</p>
+<span id="more"></span>
+<h4 id="相关优化"><a href="#相关优化" class="headerlink" title="相关优化"></a>相关优化</h4><ol>
+<li>路由使用懒加载，异步加载组件，可以减少首屏加载时间（根据项目而定，如果只是简单的活动页面倒是没必要使用）。</li>
+<li>使用keepAlive，缓存组件，即可以保持这些组件的状态，又避免反复重渲染导致的性能问题，注意并非所有组件都需要缓存，根据项目情况而定。</li>
+<li>永远不要把 v-if 和 v-for 同时用在同一个元素上（<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/style-guide/#%E9%81%BF%E5%85%8D-v-if-%E5%92%8C-v-for-%E7%94%A8%E5%9C%A8%E4%B8%80%E8%B5%B7%E5%BF%85%E8%A6%81">官网特意强调</a>）。</li>
+<li>合理使用v-if和v-show。一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。</li>
+<li>合理使用key。key是特殊的属性，主要用于Vue虚拟DOM算法中新旧vNode的对比。使用正确的key，可以在元素节点变化时，迅速感知，减少diff算法时间。</li>
+<li>合理使用functional组件，减少渲染代价。</li>
+<li>合理定义data数据，对于不需要响应式的数据，可以不定义在data内，或大量数据时使用Object.freeze冻结数据，避免处理响应式的性能消耗。</li>
+<li>取值使用局部变量，莫要大量使用this.key的方式，通过缓存可以减少触发响应式的getter方法。</li>
+<li>对于长列表可以使用虚拟滚轮，减少页面渲染dom数量；对于点击事件可以使用事件委托，减少事件注册量。</li>
+<li>computed和watch的使用区分。<blockquote>
+<p>computed: 计算属性，依赖其它属性值，并且 computed 的值有缓存，只有它依赖的属性值发生改变，下一次获取 computed 的值时才会重新计算 computed 的值；<br>watch: 当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。</p>
+</blockquote>
+</li>
+<li>组件内自定义的监听事件，在组件销毁时需手动移除事件监听，避免内存泄露。</li>
+<li>图片懒加载，第三方库按需引入等。</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/03/01/js%E5%AE%9E%E7%8E%B0new/" class="archive-article-date">
-  	<time datetime="2021-03-01T07:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/03/01/js%E5%AE%9E%E7%8E%B0new/">JS实现new</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo" title="微博">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin" title="微信">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq" title="QQ">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban" title="豆瓣">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone" title="QQ空间">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook" title="脸书">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter" title="推特">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google" title="谷歌">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://willianlu.github.io/blog/2021/03/13/vue%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/03/01/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%88%E5%92%8C%E5%A0%86/" class="archive-article-date">
-  	<time datetime="2021-03-01T03:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2021/03/11/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">防抖和节流</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/03/01/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%A0%88%E5%92%8C%E5%A0%86/">JS数据类型及栈和堆</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
+  <div id="SOHUCS" sid="vue性能优化个人总结" ></div> 
+<script charset="utf-8" type="text/javascript" src="//cy-cdn.kuaizhan.com/upload/changyan.js" ></script>
+<style>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/28/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2021-02-28T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/28/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">前端性能优化</a>
-    </h1>
+</style>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cyvkfCtfx",
+        conf: "prod_1983e8cd9edea3f28063612b0bb27aa4"
+    });
+</script>
+</script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/28/TCP%E7%AE%80%E4%BB%8B/" class="archive-article-date">
-  	<time datetime="2021-02-28T05:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/28/TCP%E7%AE%80%E4%BB%8B/">TCP简介</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/28/HttpAndHttps/" class="archive-article-date">
-  	<time datetime="2021-02-28T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/28/HttpAndHttps/">HTTP 与 HTTPS的区别</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/26/html%E8%AF%AD%E4%B9%89%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2021-02-26T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/26/html%E8%AF%AD%E4%B9%89%E5%8C%96/">HTML语义化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/26/%E5%89%8D%E7%AB%AF%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
-  	<time datetime="2021-02-26T06:07:55.416Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/26/%E5%89%8D%E7%AB%AF%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C%E5%AE%9E%E8%B7%B5/">前端用户体验实践</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">用户体验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/25/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2021-02-25T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/25/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E7%82%B9/">javascript基础知识点</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2021/02/25/index/" class="archive-article-date">
-  	<time datetime="2021-02-25T04:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2021/02/25/index/">我曾七次鄙视自己的灵魂</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">诗歌</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/blog/archives/">&amp;laquo; Prev</a><a class="page-number" href="/blog/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -509,8 +338,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
