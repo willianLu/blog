@@ -6,19 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://willianlu.github.io/blog">
-  <title>浅析Bable | 一花一世界</title>
+  <title>Tag: docker | 一花一世界</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Bable是什么 Babel 是一个 JavaScript 编译器。Babel 是一个工具链，主要用于将 ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="浅析Bable">
-<meta property="og:url" content="https://willianlu.github.io/blog/2021/03/10/%E6%B5%85%E6%9E%90Bable/index.html">
+  <meta name="description" content="个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="一花一世界">
+<meta property="og:url" content="https://willianlu.github.io/blog/tags/docker/index.html">
 <meta property="og:site_name" content="一花一世界">
-<meta property="og:description" content="Bable是什么 Babel 是一个 JavaScript 编译器。Babel 是一个工具链，主要用于将 ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。">
+<meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-10T09:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-10T10:18:49.310Z">
 <meta property="article:author" content="lukunkun">
-<meta property="article:tag" content="bable">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="一花一世界" type="application/atom+xml">
@@ -143,195 +140,102 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-浅析Bable" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      浅析Bable
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/blog/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/blog/2021/03/31/Docker%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2021-03-31T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2021/03/31/Docker%E5%AD%A6%E4%B9%A0/">Docker学习</a>
     </h1>
   
 
-        
-        <a href="/blog/2021/03/10/%E6%B5%85%E6%9E%90Bable/" class="archive-article-date">
-  	<time datetime="2021-03-10T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Bable是什么"><a href="#Bable是什么" class="headerlink" title="Bable是什么"></a>Bable是什么</h3><blockquote>
-<p>Babel 是一个 JavaScript 编译器。<br>Babel 是一个工具链，主要用于将 ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。</p>
-</blockquote>
-<span id="more"></span>
-
-<h4 id="Bable-能做的事情"><a href="#Bable-能做的事情" class="headerlink" title="Bable 能做的事情"></a>Bable 能做的事情</h4><ul>
-<li>语法转换</li>
-<li>通过 Polyfill 方式在目标环境中添加缺失的特性 (通过 @babel/polyfill 模块)</li>
-<li>源码转换</li>
-</ul>
-<h4 id="Bable-工作过程"><a href="#Bable-工作过程" class="headerlink" title="Bable 工作过程"></a>Bable 工作过程</h4><ol>
-<li>Parse(解析)：通过词法分析和语法分析，将源代码转换成抽象语法树AST</li>
-<li>Transform(转换)：通过插件对AST做一些特殊处理，深度优先遍历AST生成新的AST</li>
-<li>Generate(代码生成)：将第二步经过转换过的AST生成新的代码</li>
-</ol>
-<h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><p>Babel 虽然开箱即用，但是什么动作都不做。它基本上类似于 const babel = code =&gt; code; ，将代码解析之后再输出同样的代码。如果想要 Babel 做一些实际的工作，就需要为其添加插件。</p>
-<ul>
-<li>转换插件 - 这些插件用于转换你的代码。</li>
-<li>语法插件 - 这些插件只允许 Babel 解析（parse） 特定类型的语法（而不是转换）。</li>
-</ul>
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><ol>
-<li>.babelrc<br>　　只是项目中经常用到的方式，在项目根目录创建名为.babelrc文件，内部包括两个方面：plugins和presets，如下 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;presets&quot;</span>: [...],</span><br><span class="line">    <span class="string">&quot;plugins&quot;</span>: [...]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>babel.config.js<br>　　这种方式是使用js代码编写，如下 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        presets: [ ... ],</span><br><span class="line">        plugins: [ ... ]</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>package.json<br>　　这种该方式是在项目配置文件package.json中进行配置，如下： <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;my-package-babel&quot;</span>,</span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;1.0.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;babel&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;presets&quot;</span>: [ ... ],</span><br><span class="line">        <span class="string">&quot;plugins&quot;</span>: [ ... ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jyybeam/p/13375179.html">浅析Babel原理</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">bable</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo" title="微博">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin" title="微信">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq" title="QQ">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban" title="豆瓣">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone" title="QQ空间">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook" title="脸书">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter" title="推特">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google" title="谷歌">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://willianlu.github.io/blog/2021/03/10/%E6%B5%85%E6%9E%90Bable/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/blog/2021/03/10/%E6%B5%85%E6%9E%90webpack/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          浅析webpack
-        
-      </div>
-    </a>
-  
-  
-    <a href="/blog/2021/03/09/vue%E4%B8%8Ereact/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue与react</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
-
-  
-  <div id="SOHUCS" sid="浅析Bable" ></div> 
-<script charset="utf-8" type="text/javascript" src="//cy-cdn.kuaizhan.com/upload/changyan.js" ></script>
-<style>
     
-</style>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "cyvkfCtfx",
-        conf: "prod_1983e8cd9edea3f28063612b0bb27aa4"
-    });
-</script>
-</script>
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/blog/2021/03/31/Linux%E4%BB%A3%E7%A0%81%E9%83%A8%E7%BD%B2/" class="archive-article-date">
+  	<time datetime="2021-03-31T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/2021/03/31/Linux%E4%BB%A3%E7%A0%81%E9%83%A8%E7%BD%B2/">Linux代码部署</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
   
 
-  
+    
 
 
           </div>
@@ -356,9 +260,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
